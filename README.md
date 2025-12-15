@@ -1,27 +1,33 @@
-# _SemBridge_-v1
+# SemBridge-v1
 From Event to Policy: An Automated Semantic Bridging Approach for Security Event-Policy Linking
 
-## Introduction
+## 📝 Introduction
+
 We have implemented an automated method for linking security events with regulatory requirements and conducting compliance judgement analysis. _**SemBridge**_ introduces intermediate "bridge items" that serve as semantic pivots between events and regulatory requirements, enabling multi-hop inference with full audit trails. The method automatically generates compliance reports that not only identify violations but also provide detailed explanations tracing the logical path from security events to regulatory conclusions.
-
-
 
 <!-- 可选：截图、动图、Logo -->
 
----
 
-## 🌟 特性
 
-- ✅ **功能 1**：简短描述
-- ⚡ **功能 2**：高性能 / 易用 / 跨平台等
-- 🔒 **功能 3**：安全 / 合规 / 隐私保护等
-- 🧩 **功能 4**：支持插件 / 扩展 / API 等
+## 🌟 Core Features 
 
----
+- 🔗 **Auto-link events to laws**: Link security events (e.g., app logs or audit records) to relevant privacy regulation clauses (e.g., PIPL article 14).
+- 🔍 **Automated compliance analysis:** Assessing whether security events meet regulatory requirements, such as compliance or violation.
+- 📚 **Multi-source regulatory analysis**: Supports joint analysis of regulations across different levels, dimensions, and hierarchies (e.g., PIPL, CSL, DSL, etc.).
+- 📑 **Generate link reports**: Export results in JSON format for link inference paths between events and legal clauses.
+- ⚡ **Higher efficiency**: Minimizes manual auditing costs, enables rapid output of compliance insights, and supports human-in-the-loop review.
+- 🧩 **Operational expandability**: Predefined bridge items and regulatory documents are modular, flexible, and easily updatable to adapt to domain-specific needs and evolving legal requirements.
 
-## 🚀 快速开始
 
-### Project Structure
+
+## ⚙️ Method Workflow
+
+
+
+
+
+## 📂 Project Structure
+
 ```
 SemBridgev1/
 ├── BridgeMapping/                          # BridgeMapping and link inference
@@ -44,30 +50,46 @@ SemBridgev1/
 ├── bridge_items.json                       # Predefined Bridge items
 ├── end_to_end_sembridge.py                 # main .py for the SemBridge process
 ├── requirements.txt                 		
-└── README.md                               
+└── README.md       
 ```
 
 
 
-### 数据集说明
+## 数据集说明
 
 
 
-### Demo
 
 
-
-### 评估结果
-
-
+## 🚀 快速开始
 
 ### Install
 
 ```bash
-# 方式 1：pip 安装（如果是 Python 包）
-pip install your-package-name
+# pip 安装
+pip install -r requirements.txt
 
 # 方式 2：克隆源码
 git clone https://github.com/yourname/your-repo.git
 cd your-repo
 pip install -r requirements.txt
+```
+
+
+
+
+
+
+
+
+
+### 
+
+## 评估结果
+
+
+
+
+
+
+
