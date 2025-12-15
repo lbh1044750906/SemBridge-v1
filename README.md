@@ -19,7 +19,7 @@ We have implemented **SemBridge**, an automated and fully auditable method for *
 
 ## ⚙️ Method Workflow
 
-* [项目概述 (SemBridge Overview)](resources/SemBridge_overview.pdf)
+![SemBridge Overview](resources/SemBridge_overview.jpg)
 
 ## 📂 Project Structure
 
