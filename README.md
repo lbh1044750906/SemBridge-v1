@@ -1,10 +1,10 @@
-# _SemBridge_: Semantic Bridge for Event-Policy Linking
+# *SemBridge*: Semantic Bridge for Event-Policy Linking
 
 From Event to Policy: An Automated Semantic Bridging Approach for Security Event-Policy Linking
 
 ## 📝 Introduction
 
-We have implemented **_SemBridge_**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** (桥接项) that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
+We have implemented **SemBridge**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** (桥接项) that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
 
 <!-- 可选：截图、动图、Logo -->
 
@@ -48,13 +48,16 @@ SemBridgev1/
 └── README.md       
 ```
 
-
-## 数据集说明
-
+## 📊 Dataset Description
 
 
 
-## 🚀 快速开始
+## 🧑‍💻 Demo
+
+
+
+
+## 🚀 Quick Start
 
 ### Install
 
@@ -69,10 +72,7 @@ pip install -r requirements.txt
 ```
 
 
-
-## 评估结果
-
-
+## 📋 Evaluation Results
 
 
 
