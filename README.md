@@ -21,6 +21,17 @@ We have implemented an automated method for linking security events with regulat
 
 ## 🚀 快速开始
 
+### Project Structure
+
+SemBridge-v1/
+├── src/                  # 源代码
+├── tests/                # 单元测试
+├── examples/             # 使用示例
+├── docs/                 # 文档（可选）
+├── requirements.txt      # 依赖
+├── README.md
+└── LICENSE
+
 ### 安装
 
 ```bash
