@@ -24,7 +24,7 @@ We have implemented **_SemBridge_**, an automated and fully auditable method for
 ## 📂 Project Structure
 
 ```
-SemBridgev1/
+SemBridge-v1/
 ├── BridgeMapping/                          # BridgeMapping and link inference
 │   ├── __init__.py
 │   ├── compliance_RKG_CoT.json
