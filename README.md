@@ -29,7 +29,7 @@ SemBridgev1/
 │   ├── compliance_RKG_CoT.json
 │   ├── construction_RKG.py                 # constructing RKG (Rule Knowledge Graph)
 │   ├── link_inference.py                   # link inference
-│   ├── LLM_MapBridgeToRule.py              # LLM mapping bridge items to regulations
+│   ├── LLM_MapBridgeToRule.py              # LLM association analysis for bridge items and regulations
 │   └── policies_all.json					# regulations data
 ├── BridgeMatching/                         # BridgeMatching
 │   ├── __init__.py
