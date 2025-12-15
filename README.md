@@ -23,14 +23,27 @@ We have implemented an automated method for linking security events with regulat
 
 ### Project Structure
 ```
-SemBridge-v1/
-    ├── src/                  # 源代码
-    ├── tests/                # 单元测试
-    ├── examples/             # 使用示例
-    ├── docs/                 # 文档（可选）
-    ├── requirements.txt      # 依赖
-    ├── README.md
-    └── LICENSE
+SemBridgev1/
+├── BridgeMapping/                          # BridgeMapping and link inference
+│   ├── __init__.py
+│   ├── compliance_RKG_CoT.json
+│   ├── construction_RKG.py                 # constructing RKG (Rule Knowledge Graph)
+│   ├── link_inference.py                   # link inference
+│   ├── LLM_MapBridgeToRule.py              # LLM mapping bridge items to regulations
+│   └── policies_all.json					# regulations data
+├── BridgeMatching/                         # BridgeMatching
+│   ├── __init__.py
+│   ├── BridgeMatch_predict.py              # bridge items match prediction
+│   ├── BridgeMatch_trainLLM.py             # training LLM for bridge matching
+│   ├── config.json                         # Configuration file
+│   └── train_bridge_data.json              # Training data
+├── ESE_module/                             # ESE module
+│   ├── __init__.py
+│   ├── config.json                         # Configuration file
+│   └── event_enhance.py                    # event semantic enhancement
+├── bridge_items.json                       # Predefined Bridge items
+├── end_to_end_sembridge.py                 # main .py for the SemBridge process
+└── README.md    
 ```
 
 ### 安装
