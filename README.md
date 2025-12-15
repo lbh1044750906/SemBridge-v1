@@ -61,9 +61,7 @@ SemBridge-v1/
 ## 📊 Dataset Description
 The project contains the following data files:
 
-- `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input text `T` and the bridge item, such as “compliant” or “violating”).
-
-For example, the bridging item `B-01` is: 
+- `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input text `T` and the bridge item, such as “compliant” or “violating”). For example, the bridging item `B-01` is: 
 ```
     {
       "ID": "B-01",
