@@ -4,8 +4,6 @@ From Event to Policy: An Automated Semantic Bridging Approach for Security Event
 ## Introduction
 We have implemented an automated method for linking security events with regulatory requirements and conducting compliance judgement analysis. _SemBridge_ introduces intermediate “bridge items” that serve as semantic pivots between events and regulatory requirements, enabling multi-hop inference with full audit trails. The method automatically generates compliance reports that not only identify violations but also provide detailed explanations tracing the logical path from security events to regulatory conclusions.
 
-[![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)]()
-[![Stars](https://img.shields.io/github/stars/yourname/repo?style=social)]()
 
 
 <!-- 可选：截图、动图、Logo -->
