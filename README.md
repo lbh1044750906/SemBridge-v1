@@ -1,8 +1,8 @@
-# SemBridge-v1
+# _SemBridge_-v1
 From Event to Policy: An Automated Semantic Bridging Approach for Security Event-Policy Linking
 
 ## Introduction
-We have implemented an automated method for linking security events with regulatory requirements and conducting compliance judgement analysis. _SemBridge_ introduces intermediate “bridge items” that serve as semantic pivots between events and regulatory requirements, enabling multi-hop inference with full audit trails. The method automatically generates compliance reports that not only identify violations but also provide detailed explanations tracing the logical path from security events to regulatory conclusions.
+We have implemented an automated method for linking security events with regulatory requirements and conducting compliance judgement analysis. _**SemBridge**_ introduces intermediate “bridge items” that serve as semantic pivots between events and regulatory requirements, enabling multi-hop inference with full audit trails. The method automatically generates compliance reports that not only identify violations but also provide detailed explanations tracing the logical path from security events to regulatory conclusions.
 
 
 
