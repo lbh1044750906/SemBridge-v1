@@ -53,8 +53,7 @@ SemBridgev1/
 
 
 ## 🧑‍💻 Demo
-* [案例研究 1 (Case Study 1)](resources/case_study1.pdf)
-
+![SemBridge Overview](resources/case_study2.jpg)
 
 
 ## 🚀 Quick Start
