@@ -1,13 +1,12 @@
-# SemBridge-v1
+# _SemBridge_: Semantic Bridge for Event-Policy Linking
+
 From Event to Policy: An Automated Semantic Bridging Approach for Security Event-Policy Linking
 
 ## 📝 Introduction
 
-We have implemented an automated method for linking security events with regulatory requirements and conducting compliance judgement analysis. _**SemBridge**_ introduces intermediate "bridge items" that serve as semantic pivots between events and regulatory requirements, enabling multi-hop inference with full audit trails. The method automatically generates compliance reports that not only identify violations but also provide detailed explanations tracing the logical path from security events to regulatory conclusions.
+We have implemented **_SemBridge_**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** (桥接项) that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
 
 <!-- 可选：截图、动图、Logo -->
-
-
 
 ## 🌟 Core Features 
 
@@ -18,11 +17,7 @@ We have implemented an automated method for linking security events with regulat
 - ⚡ **Higher efficiency**: Minimizes manual auditing costs, enables rapid output of compliance insights, and supports human-in-the-loop review.
 - 🧩 **Operational expandability**: Predefined bridge items and regulatory documents are modular, flexible, and easily updatable to adapt to domain-specific needs and evolving legal requirements.
 
-
-
 ## ⚙️ Method Workflow
-
-
 
 
 
@@ -54,9 +49,7 @@ SemBridgev1/
 ```
 
 
-
 ## 数据集说明
-
 
 
 
@@ -77,17 +70,7 @@ pip install -r requirements.txt
 
 
 
-
-
-
-
-
-
-### 
-
 ## 评估结果
-
-
 
 
 
