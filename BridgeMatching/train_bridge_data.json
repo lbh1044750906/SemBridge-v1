@@ -1,0 +1,4 @@
+{"behavior": "应用在收集用户位置信息前，弹窗显示详细处理规则并获取用户点击同意。", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
+{"behavior": "APP将用户数据用途从'订单处理'变更为'营销分析'时，未重新获取用户同意。", "compliance_labels": [{"bridge_id": "B-02", "SJ": 0}]}
+{"behavior": "在APP的隐私政策中未注明公司名称及客服邮箱。", "compliance_labels": [{"bridge_id": "B-04", "SJ": 0}]}
+// 这是我们的训练数据/标注数据结构案例，可参考这个形式构造自己领域适应的数据
