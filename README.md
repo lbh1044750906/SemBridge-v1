@@ -33,7 +33,7 @@ The workflow transforms security event data into auditable compliance decisions 
 
 ## 📂 Project Structure
 
-```
+```bash
 SemBridge-v1/
 ├── BridgeMapping/                          # BridgeMapping and link inference
 │   ├── __init__.py
@@ -62,7 +62,7 @@ SemBridge-v1/
 The project contains the following data files:
 
 - `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input text `T` and the bridge item, such as “compliant” or “violating”). For example, the bridging item `B-01` is: 
-```
+```bash
     {
       "ID": "B-01",
       "L1": "处理个人信息合法性基础",
@@ -74,7 +74,7 @@ The project contains the following data files:
 
 - `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $\mathcal{B}$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
 
-```
+```bash
 {"behavior": "应用在收集用户位置信息前，弹窗显示详细处理规则并获取用户点击同意。", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
 {"behavior": "APP将用户数据用途从'订单处理'变更为'营销分析'时，未重新获取用户同意。", "compliance_labels": [{"bridge_id": "B-02", "SJ": 0}]}
 {"behavior": "在APP的隐私政策中未注明公司名称及客服邮箱。", "compliance_labels": [{"bridge_id": "B-04", "SJ": 0}]}
