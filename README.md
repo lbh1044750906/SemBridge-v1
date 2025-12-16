@@ -76,7 +76,7 @@ The project contains the following data files:
 
 ```bash
 {"behavior": "应用在收集用户位置信息前，弹窗显示详细处理规则并获取用户点击同意。", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
-{"behavior": "APP将用户数据用途从'订单处理'变更为'营销分析'时，未重新获取用户同意。", "compliance_labels": [{"bridge_id": "B-02", "SJ": 0}]}
+{"behavior": "用户设备在访问irs01.com时开启数据加密传输，HTTP请求参数包含加密标识encrypt=1，传输协议为HTTP，数据以明文形式传输但包含加密标识，涉及设备信息（IMEI、MAC、AndroidID等非敏感数据）。", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
 ```
 
 - `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T~35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). For example, a data structure for a clause is as follows:
