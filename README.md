@@ -4,7 +4,7 @@ From Event to Policy: An Automated Semantic Bridging Approach for Security Event
 
 ## 📝 Introduction
 
-We have implemented **_SemBridge_**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** (桥接项) that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
+We have implemented **_SemBridge_**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
 
 **Application Scenarios:** App Log Behaviour Compliance Auditing, Professional Audit Records Compliance Analysis, Cybersecurity Events Compliance Analysis, Documentation Materials Compliance Analysis (Supported data types: structured, semi-structured and unstructured data).
 <!-- 可选：截图、动图、Logo -->
@@ -65,9 +65,9 @@ The project contains the following data files:
 ```bash
     {
       "ID": "B-01",
-      "L1": "处理个人信息合法性基础",
-      "L2": "知情同意",
-      "SD": "基于个人同意处理个人信息时，应该取得个人同意，且该同意由个人在充分知情的前提下自愿、明确作出。",
+      "L1": "Lawful Basis for Personal Information",
+      "L2": "Individual Consent",
+      "SD": "Consent must be voluntary, informed, and explicitly given for personal information (PI) processing.",
       "SJ": ""    
     }
 ```
@@ -75,8 +75,8 @@ The project contains the following data files:
 - `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $\mathcal{B}$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
 
 ```bash
-{"behavior": "应用在收集用户位置信息前，弹窗显示详细处理规则并获取用户点击同意。", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
-{"behavior": "用户设备在访问irs01.com时开启数据加密传输，HTTP请求参数包含加密标识encrypt=1，传输协议为HTTP，数据以明文形式传输但包含加密标识，涉及设备信息（IMEI、MAC、AndroidID等非敏感数据）。", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
+{"behavior": "Before collecting users' location information, a modal window is displayed showing detailed processing rules and obtaining the user's consent via click.", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
+{"behavior": "When accessing irs01.com, the user's device initiates encrypted data transmission. The HTTP request parameter includes the encryption identifier `encrypt=1`, utilising the HTTP protocol. Data is transmitted in plaintext format but includes the encryption identifier, involving device information such as IMEI, MAC address, Android ID, and other data.", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
 ```
 
 - `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T~35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). For example, a data structure for a clause is as follows:
@@ -84,8 +84,8 @@ The project contains the following data files:
 ```bash
   {
     "CID": "PIPL-16",
-    "PName": "《中华人民共和国个人信息保护法》",
-    "Cont": "个人信息处理者不得以个人不同意处理其个人信息或者撤回同意为由，拒绝提供产品或者服务；处理个人信息属于提供产品或者服务所必需的除外。"
+    "PName": "《Personal Information Protection Law of the People's Republic of China》",
+    "Cont": "A personal information processor shall not refuse to provide products or services for an individual on the grounds that the individual withholds his consent for the processing of his personal information or has withdrawn his consent for the processing of personal information, except where the processing of personal information is necessary for the provision of products or services."
   }
 ```
 
@@ -94,15 +94,14 @@ The project contains the following data files:
 "compliance_graph": [
     {
       "bridge_id": "B-01",
-      "bridge_sd": "基于个人同意处理个人信息时，应该取得个人同意，且该同意由个人在充分知情的前提下自愿、明确作出。",
-      "compliance_attr": "未知",
+      "bridge_sd": "Consent must be voluntary, informed, and explicitly given for personal information (PI) processing.",
       "related_laws": [
         {
-          "law": "《个人信息保护法》",
+          "law": "《Personal Information Protection Law of the People's Republic of China》",
           "article": "14",
-          "level": "法律",
+          "level": "Law",
           "effective_date": "2021-11",
-          "relation": "直接对应",
+          "relation": "Direct correspondence",
           "compliance_degree": 4.0
         },
         ...
