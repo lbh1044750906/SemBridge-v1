@@ -79,7 +79,16 @@ The project contains the following data files:
 {"behavior": "APP将用户数据用途从'订单处理'变更为'营销分析'时，未重新获取用户同意。", "compliance_labels": [{"bridge_id": "B-02", "SJ": 0}]}
 ```
 
-- `/BridgeMapping/policies_all.json`:  
+- `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T~35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). For example, a data structure for a clause is as follows:
+
+```bash
+  {
+    "CID": "PIPL-16",
+    "PName": "《中华人民共和国个人信息保护法》",
+    "Cont": "个人信息处理者不得以个人不同意处理其个人信息或者撤回同意为由，拒绝提供产品或者服务；处理个人信息属于提供产品或者服务所必需的除外。"
+  }
+```
+
 - `/BridgeMapping/compliance_RKG_CoT.json`:  
 
 
