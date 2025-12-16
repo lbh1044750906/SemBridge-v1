@@ -118,17 +118,26 @@ The project contains the following data files:
 
 
 ## 🚀 Quick Start
-
+This project relies on `Python 3.12` and `CUDA 12.1` and is only supported on **Linux GPU servers**. If using other versions of Python, you will need to adjust the corresponding packages and CUDA versions accordingly.
 ### Install
 
 ```bash
-# pip 安装
+# Step 1: Create a virtual environment (recommended)
+python3.12 -m venv hf-env
+source hf-env/bin/activate
+pip install --upgrade pip
+
+# Step 2: Install PyTorch (with CUDA 12.1 support)
+pip install torch==2.3.0+cu121 torchvision==0.18.0+cu121 \
+    --extra-index-url https://download.pytorch.org/whl/cu121
+
+# Step 3: Install the remaining dependencies
 pip install -r requirements.txt
 
-# 方式 2：克隆源码
-git clone https://github.com/yourname/your-repo.git
-cd your-repo
-pip install -r requirements.txt
+# Verify Installation
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+# Output should be: 2.3.0+cu121 True
+
 ```
 
 
