@@ -142,7 +142,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 **1. End-to-End SemBridge**
 
 ​Under the `main/` directory, run `end_to_end_sembridge.py` using the following command.
-```bash
+```python
 python end_to_end_sembridge.py
 ```
 
@@ -151,7 +151,7 @@ The configuration information is located in the `config.json` files within the `
 **2. Event Semantic Enhancement**
 
 Under `ESE_module/`, the `event_enhance.py` file implements semantic enhancement. Here, we have packaged it as a function that can be directly loaded and used in other files.
-```bash
+```python
 from ESE_module.event_enhance import init_enhancer, enhance_event
 
 # using the semantic enhancer
@@ -163,7 +163,7 @@ enhanced_text = enhance_event(event)    # event as the input structured data
 
 Under `BridgeMatching/`, the `BridgeMatch_trainLLM.py` file uses `train_bridge_data.json` to fine-tune the LLM. The `BridgeMatch_predict.py` file provides an interface for calling prediction functions.
 
-```bash
+```python
 # BridgeMatching training
 python BridgeMatch_trainLLM.py
 
@@ -178,7 +178,7 @@ result_file = predictor.predict_and_save(enhanced_text)   # enhanced_text as the
 
 Under `BridgeMapping/`, `LLM_MapBridgeToRule.py` employs LLM analysis to map relationships between bridging items and regulatory provisions. `construction_RKG.py` constructs a relational knowledge graph based on the output from `LLM_MapBridgeToRule.py`, with results output to `compliance_RKG_CoT.json`. `link_inference.py` calculates and outputs mapping relationships and link analysis results.
 
-```bash
+```python
 # LLM association analysis
 python LLM_MapBridgeToRule.py
 
