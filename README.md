@@ -123,7 +123,7 @@ This project relies on `Python 3.12` and `CUDA 12.1` and is only supported on **
 
 ```bash
 # Step 1: Create a virtual environment (recommended)
-python3.12 -m venv hf-env
+python -m venv hf-env
 source hf-env/bin/activate
 pip install --upgrade pip
 
