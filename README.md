@@ -139,17 +139,60 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 
 ```
 ### Running Instructions
-1. End-to-End SemBridge
+**1. End-to-End SemBridge**
 
-​	Under the `main/` directory, run `end_to_end_sembridge.py` using the following command.
-
+​Under the `main/` directory, run `end_to_end_sembridge.py` using the following command.
 ```bash
 python end_to_end_sembridge.py
 ```
 
 The configuration information is located in the `config.json` files within the `ESE_module/` and `BridgeMatching/` directories, allowing for flexible configuration and modification.
 
-## 📋 Evaluation Results
+**2. Event Semantic Enhancement**
 
+Under `ESE_module/`, the `event_enhance.py` file implements semantic enhancement. Here, we have packaged it as a function that can be directly loaded and used in other files.
+```bash
+from ESE_module.event_enhance import init_enhancer, enhance_event
+
+# using the semantic enhancer
+init_enhancer()
+enhanced_text = enhance_event(event)    # event as the input structured data
+```
+
+**3. _BridgeMatching_**
+
+Under `BridgeMatching/`, the `BridgeMatch_trainLLM.py` file uses `train_bridge_data.json` to fine-tune the LLM. The `BridgeMatch_predict.py` file provides an interface for calling prediction functions.
+
+```bash
+# BridgeMatching training
+python BridgeMatch_trainLLM.py
+
+# BridgeMatching for prediction
+from BridgeMatching.BridgeMatch_predict import BehaviorPredictor
+
+predictor = BehaviorPredictor()
+result_file = predictor.predict_and_save(enhanced_text)   # enhanced_text as the output of ESE_module
+```
+
+**4. _BridgeMapping_**
+
+Under `BridgeMapping/`, `LLM_MapBridgeToRule.py` employs LLM analysis to map relationships between bridging items and regulatory provisions. `construction_RKG.py` constructs a relational knowledge graph based on the output from `LLM_MapBridgeToRule.py`, with results output to `compliance_RKG_CoT.json`. `link_inference.py` calculates and outputs mapping relationships and link analysis results.
+
+```bash
+# LLM association analysis
+python LLM_MapBridgeToRule.py
+
+# Building RKG 
+python construction_RKG.py
+
+# link inference
+from BridgeMapping.link_inference import build_bridge_to_law_ids, process_behavior_jsonl
+
+# Loading RKG
+bridge_to_clauses = build_bridge_to_law_ids(RELATION_DATA_PATH)  # RELATION_DATA_PATH is compliance_RKG_CoT.json
+
+# Analyse event data
+process_behavior_jsonl(INPUT_JSONL_PATH, OUTPUT_JSONL_PATH, bridge_to_clauses) # INPUT_JSONL_PATH is Matching bridge item result file, OUTPUT_JSONL_PATH is Link result output file,
+```
 
 
