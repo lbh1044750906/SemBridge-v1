@@ -163,10 +163,12 @@ enhanced_text = enhance_event(event)    # event as the input structured data
 
 Under `BridgeMatching/`, the `BridgeMatch_trainLLM.py` file uses `train_bridge_data.json` to fine-tune the LLM. The `BridgeMatch_predict.py` file provides an interface for calling prediction functions.
 
-```python
+```bash
 # BridgeMatching training
 python BridgeMatch_trainLLM.py
+```
 
+```python
 # BridgeMatching for prediction
 from BridgeMatching.BridgeMatch_predict import BehaviorPredictor
 
@@ -178,13 +180,15 @@ result_file = predictor.predict_and_save(enhanced_text)   # enhanced_text as the
 
 Under `BridgeMapping/`, `LLM_MapBridgeToRule.py` employs LLM analysis to map relationships between bridging items and regulatory provisions. `construction_RKG.py` constructs a relational knowledge graph based on the output from `LLM_MapBridgeToRule.py`, with results output to `compliance_RKG_CoT.json`. `link_inference.py` calculates and outputs mapping relationships and link analysis results.
 
-```python
+```bash
 # LLM association analysis
 python LLM_MapBridgeToRule.py
 
 # Building RKG 
 python construction_RKG.py
+```
 
+```python
 # link inference
 from BridgeMapping.link_inference import build_bridge_to_law_ids, process_behavior_jsonl
 
