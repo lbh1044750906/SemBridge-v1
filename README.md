@@ -91,11 +91,25 @@ The project contains the following data files:
 
 - `/BridgeMapping/compliance_RKG_CoT.json`:  We constructed a relationship knowledge graph mapping bridge items to regulatory clauses using `LLM_MapBridgeToRule.py` and `construction_RKG.py`. The data is stored in `compliance_RKG_CoT.json`. This is a completed relational data set with the following structure:
 ```bash
-  {
-    "CID": "PIPL-16",
-    "PName": "《中华人民共和国个人信息保护法》",
-    "Cont": "个人信息处理者不得以个人不同意处理其个人信息或者撤回同意为由，拒绝提供产品或者服务；处理个人信息属于提供产品或者服务所必需的除外。"
-  }
+"compliance_graph": [
+    {
+      "bridge_id": "B-01",
+      "bridge_sd": "基于个人同意处理个人信息时，应该取得个人同意，且该同意由个人在充分知情的前提下自愿、明确作出。",
+      "compliance_attr": "未知",
+      "related_laws": [
+        {
+          "law": "《个人信息保护法》",
+          "article": "14",
+          "level": "法律",
+          "effective_date": "2021-11",
+          "relation": "直接对应",
+          "compliance_degree": 4.0
+        },
+        ...
+      ]
+    },
+    ...
+]
 ```
 
 
