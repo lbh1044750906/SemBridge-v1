@@ -62,7 +62,7 @@ SemBridge-v1/
 The project contains the following data files:
 
 - `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input text `T` and the bridge item, such as “compliant” or “violating”). For example, the bridging item `B-01` is: 
-```bash
+```json
     {
       "ID": "B-01",
       "L1": "Lawful Basis for Personal Information",
@@ -74,14 +74,14 @@ The project contains the following data files:
 
 - `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $\mathcal{B}$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
 
-```bash
+```json
 {"behavior": "Before collecting users' location information, a modal window is displayed showing detailed processing rules and obtaining the user's consent via click.", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
 {"behavior": "When accessing irs01.com, the user's device initiates encrypted data transmission. The HTTP request parameter includes the encryption identifier `encrypt=1`, utilising the HTTP protocol. Data is transmitted in plaintext format but includes the encryption identifier, involving device information such as IMEI, MAC address, Android ID, and other data.", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
 ```
 
 - `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T~35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). For example, a data structure for a clause is as follows:
 
-```bash
+```json
   {
     "CID": "PIPL-16",
     "PName": "《Personal Information Protection Law of the People's Republic of China》",
@@ -90,7 +90,7 @@ The project contains the following data files:
 ```
 
 - `/BridgeMapping/compliance_RKG_CoT.json`:  We constructed a relationship knowledge graph mapping bridge items to regulatory clauses using `LLM_MapBridgeToRule.py` and `construction_RKG.py`. The data is stored in `compliance_RKG_CoT.json`. This is a completed relational data set with the following structure:
-```bash
+```json
 "compliance_graph": [
     {
       "bridge_id": "B-01",
