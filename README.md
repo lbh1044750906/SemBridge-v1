@@ -138,7 +138,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 # Output should be: 2.3.0+cu121 True
 
 ```
-### Running Instructions
+### Running
 **1. End-to-End SemBridge**
 
 ​Under the `main/` directory, run `end_to_end_sembridge.py` using the following command.
