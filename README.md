@@ -18,7 +18,7 @@ We have implemented **_SemBridge_**, an automated and fully auditable method for
 - ⚡ **Higher efficiency**: Minimizes manual auditing costs, enables rapid output of compliance insights, and supports human-in-the-loop review.
 - 🧩 **Operational expandability**: Predefined bridge items and regulatory documents are modular, flexible, and easily updatable to adapt to domain-specific needs and evolving legal requirements.
 
-## ⚙️ Method Workflow
+## ⚙️ Workflow
 The workflow transforms security event data into auditable compliance decisions through four stages:
 
 - **Event Semantic Enhancement:** We use engineered prompts, iteratively refined based on key insights, to leverage an LLM to perform contextual expansion, generating comprehensive textual representation $T$ that preserve original event semantics while enhancing interpretability.
