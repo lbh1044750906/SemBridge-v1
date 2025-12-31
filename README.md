@@ -113,7 +113,7 @@ The project contains the following data files:
 
 
 ## 🧑‍💻 Demo
-![SemBridge Overview](resources/case_study2.jpg)
+![SemBridge Demo](resources/case_study.jpg)
 
 
 ## 🚀 Quick Start
