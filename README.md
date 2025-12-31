@@ -6,13 +6,13 @@ From Event to Policy: An Automated Semantic Bridging Approach for Security Event
 
 We have implemented **_SemBridge_**, an automated and fully auditable method for **Security Event-Policy Linking** and subsequent compliance judgment. Unlike traditional direct matching, *SemBridge* introduces **intermediate "bridge items"** that act as **pivotal anchors** between raw security events and abstract regulatory requirements. This design enables **multi-hop, explainable inference**, providing a complete and verifiable logical path (full audit trail) from the occurrence of a security event to the final regulatory conclusion. The method automatically generates comprehensive compliance reports, which not only identify potential policy violations but also furnish **detailed, trace-backed explanations** to facilitate compliance analysis and remediation.
 
-**Application Scenarios:** App Log Behaviour Compliance Auditing, Professional Audit Records Compliance Analysis, Cybersecurity Events Compliance Analysis, Documentation Materials Compliance Analysis (Supported data types: structured, semi-structured and unstructured data).
+**Application Scenarios:** App Log Behaviour Compliance Auditing, Professional Audit Records Compliance Checking, Cybersecurity Events Compliance Analysis, Documentation Materials Compliance Analysis (Supported data types: structured, semi-structured and unstructured data).
 <!-- 可选：截图、动图、Logo -->
 
 ## 🌟 Core Features 
 
-- 🔗 **Auto-link events to laws**: Link security events (e.g., app logs or audit records) to relevant privacy regulation clauses (e.g., PIPL article 14).
-- 🔍 **Automated compliance analysis:** Assessing whether security events meet regulatory requirements, such as compliance or violation.
+- 🔗 **Auto-link events to regulations**: Link security events (e.g., app logs or audit records) to relevant privacy regulation clauses (e.g., PIPL article 14).
+- 🔍 **Automated compliance checking:** Checking whether security events meet regulatory requirements, such as compliance or violation.
 - 📚 **Multi-source regulatory analysis**: Supports joint analysis of regulations across different levels, dimensions, and hierarchies (e.g., PIPL, CSL, DSL, etc.).
 - 📑 **Generate link reports**: Export results in JSON format for link inference paths between events and legal clauses.
 - ⚡ **Higher efficiency**: Minimizes manual auditing costs, enables rapid output of compliance insights, and supports human-in-the-loop review.
