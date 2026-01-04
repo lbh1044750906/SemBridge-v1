@@ -7,90 +7,80 @@ from BridgeMapping.link_inference import build_bridge_to_law_ids, process_behavi
 
 def count_behavior_records(file_path):
     """
-    读取行为数据JSON文件，返回其中的行为记录总数。
-
+    Read the behavioural data JSON file and return the total number of behavioural records contained within.
     Args:
-        file_path (str): JSON文件路径
-
+        file_path (str): JSON file path
     Returns:
-        int: 行为数据的总数量
-
+        int: Total volume of behavioural data
     Raises:
-        FileNotFoundError: 文件不存在
-        json.JSONDecodeError: 文件格式不是合法JSON
-        ValueError: JSON根节点不是数组
+        FileNotFoundError: The file does not exist.
+        json.JSONDecodeError: The file format is not valid JSON.
+        ValueError: The JSON root node is not an array.
     """
     if not os.path.exists(file_path):
-        raise FileNotFoundError(f"文件未找到：{file_path}")
+        raise FileNotFoundError(f"File not found：{file_path}")
 
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     if not isinstance(data, list):
-        raise ValueError("JSON数据必须是一个数组（列表）")
+        raise ValueError("The JSON data must be an array (list).")
 
     return len(data)
 
 
 if __name__ == "__main__":
-    ### ESE模块加载
-    
-    # 初始化语义增强器
+    # ESE module
+    # Initialise the semantic enhancer
     init_enhancer()
     
-    # 加载行为结构化数据json文件  批量处理
-    # event_json = "event_audit.json"
+    # Security event input
+    event = {"behavior": "location_access",
+     "timestamp": "12-17 19:31:40",
+     "log_lines": [
+         "12-17 19:31:40.314 1795 3077 I GnssLocationProvider: updateLowPowerMode,isPowerSaveMode:falseisInteractive:false",
+         "12-17 19:31:40.315 4892 4956 D LocationPermission: User click 'Allow' for location access (purpose: weather forecast)",
+         "12-17 19:31:40.316 4892 4956 I LocationGetter: Get precise location (lat:30.XXX, lng:120.XXX) after authorization",
+         "12-17 19:31:41.566  1795  3139 D StubTelephonyRegistry: LISTEN_CELL_LOCATION uid:10028",
+         "12-17 19:31:41.567 16628 16628 I okhttp : okhttpstack https://adnewnc.app.auto...&lon=120.XXX&...&lat=30.XXX&..."]
+    }
+
+    # Batch processing of JSON file data for security events (enableable)
+    # event_json = "event_audit.json"  # events input file
     # try:
     #     total_count = count_behavior_records(event_json)
-    #     print(f"共加载 {total_count} 条行为数据")
+    #     print(f"A total of {total_count} rows of data have been loaded.")
     # except Exception as e:
-    #     print(f"错误：{e}")
-    
-    # 测试安全事件输入
-    event =  {
-          "app_name": "某能源服务公众号",
-          "package_name": "com.energy.service",
-          "audit_type": ["安全核查"],
-          "check_items": [
-            "穿透测试会员注册时对会员信息的收集行为"
-          ],
-          "findings": [
-            {
-              "type": "optional_personal_info_collection",
-              "item": "是否强制收集非必要个人信息（如姓名、手机号、生日、车牌号）",
-              "non_essential_info_required": "false",
-              "optional_fields": ["姓名", "手机号", "生日", "车牌号"],
-              "info_not_filled_impacts_functionality": "false"
-            }
-          ],
-          "evidence_available": "true"
-        }
-    
-    # 执行事件语义增强
+    #     print(f"Error：{e}")
+
+    # Implementation of Security Event Semantic Enhancements
     enhanced_text = enhance_event(event)
     print("enhanced_text:", enhanced_text)
     
-    ### 事件增强描述T与桥接项匹配——BridgeMatching
+    # BridgeMatching ---> Matching between bridging items and enhanced description text
+    Matching_result_file = ""  # Predicted bridging item results file
     try:
-        # 初始化预测器
+        # Initialise the match predictor
         predictor = BehaviorPredictor()
         
-        # 预测并保存结果
-        result_file = predictor.predict_and_save(enhanced_text)
+        # Predict and save the results
+        Matching_result_file = predictor.predict_and_save(enhanced_text)
     
     except Exception as e:
-        print(f"执行出错: {str(e)}")
+        print(f"Execution error: {str(e)}")
     
     
-    ### 桥接项与政策集合映射——BridgeMapping
-    RELATION_DATA_PATH = "./BridgeMapping/compliance_RKG_CoT.json"  # 默认是construction_RKG.py输出知识图谱文件
-    INPUT_JSONL_PATH = result_file       # 预测的桥接项结果文件
-    OUTPUT_JSONL_PATH = "output_link_compliance_result.json"   # link结果输出文件
-    
-    print("=== 开始加载桥接项到法律条文的映射 ===")
-    bridge_to_clauses = build_bridge_to_law_ids(RELATION_DATA_PATH)
-    
-    print("\n=== 开始处理行为数据 ===")
-    process_behavior_jsonl(INPUT_JSONL_PATH, OUTPUT_JSONL_PATH, bridge_to_clauses)
+    # BridgeMapping ---> Establishing the mapping between bridging items and policy set
+    try:
+        RELATION_DATA_PATH = "./BridgeMapping/compliance_RKG_CoT.json"  # The knowledge graph result file output by construction_RKG.py
+        INPUT_JSONL_PATH = Matching_result_file       # Predicted bridging item results file
+        OUTPUT_JSONL_PATH = "output_link_compliance_result.json"   # Link result output file
 
+        print("====== Loading the mapping between bridging items and policy clauses ======")
+        bridge_to_clauses = build_bridge_to_law_ids(RELATION_DATA_PATH)
 
+        print("\n====== Establishing the link between security event analysis and policy implementation ======")
+        process_behavior_jsonl(INPUT_JSONL_PATH, OUTPUT_JSONL_PATH, bridge_to_clauses)
+
+    except Exception as e:
+        print(f"Execution error: {str(e)}")
