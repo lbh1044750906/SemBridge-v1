@@ -1,4 +1,4 @@
-# SemBridge端到端方法调用
+# SemBridge ---> End-to-end implementation script
 import os
 import json
 from ESE_module.event_enhance import init_enhancer, enhance_event
