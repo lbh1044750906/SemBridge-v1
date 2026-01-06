@@ -141,7 +141,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ### Running
 **1. End-to-End SemBridge**
 
-​Under the `main/` directory, run `end_to_end_sembridge.py` using the following command.
+​Under the `SemBridge-v1/` directory, run `end_to_end_sembridge.py` using the following command.
 ```bash
 python end_to_end_sembridge.py
 ```
