@@ -146,7 +146,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 python end_to_end_sembridge.py
 ```
 
-The configuration information is located in the `config.json` files within the `ESE_module/` and `BridgeMatching/` directories, allowing for flexible configuration and modification. **Note:** We do not provide model files here and LLMs need to be downloaded and configured independently from open-source communities.
+The configuration information is located in the `config.json` files within the `SemBridge-v1/` directory, allowing for flexible configuration and modification. **Note:** We do not provide model files here and LLMs need to be downloaded and configured independently from open-source communities.
 
 **2. Event Semantic Enhancement**
 
