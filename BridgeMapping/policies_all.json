@@ -1,0 +1,22 @@
+[
+  {
+    "CID": "PIPL-14",
+    "PName": "《Personal Information Protection Law of the People's Republic of China》",
+    "Cont": "Where personal information processing is based on individual consent, the individual consent shall be voluntary, explicit, and fully informed. Where any other law or administrative regulation provides that an individual's separate consent or written consent must be obtained for processing personal information, such provisions shall apply."
+  },
+  {
+    "CID": "PIPL-16",
+    "PName": "《Personal Information Protection Law of the People's Republic of China》",
+    "Cont": "A personal information processor shall not refuse to provide products or services for an individual on the grounds that the individual withholds his consent for the processing of his personal information or has withdrawn his consent for the processing of personal information, except where the processing of personal information is necessary for the provision of products or services."
+  },
+  {
+    "CID": "PIPL-29",
+    "PName": "《Personal Information Protection Law of the People's Republic of China》",
+    "Cont": "For the processing of sensitive personal information, individual's separate consent shall be obtained. Where other laws or administrative regulations provide that written consent shall be obtained for the processing of sensitive personal information, such provisions shall prevail."
+  },
+  {
+    "CID": "PIPL-51",
+    "PName": "《Personal Information Protection Law of the People's Republic of China》",
+    "Cont": "Personal information processors shall take the following measures to ensure that their personal information processing activities are in compliance with laws and administrative regulations based on the purpose and means of processing, the categories of personal information to be processed, the impact on personal rights and interests, and the potential security risks, among others, and shall prevent unauthorized access to, as well as breach, tampering or loss of any personal information: ... (3) adopting corresponding security technical measures such as encryption and de-identification;"
+  }
+]
