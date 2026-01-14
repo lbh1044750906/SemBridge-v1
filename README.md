@@ -38,13 +38,13 @@ SemBridge-v1/
 ├── BridgeMapping/                          # BridgeMapping and link inference
 │   ├── __init__.py
 │   ├── compliance_RKG_CoT.json
-│   ├── construction_RKG.py                 # constructing RKG (Relationship Knowledge Graph)
+│   ├── construction_RKG.py                 # constructing Relationship Knowledge Graph
 │   ├── link_inference.py                   # link inference
-│   ├── LLM_MapBridgeToRule.py              # LLM association analysis for bridge items and regulations
+│   ├── LLM_MapBridgeToRule.py              # LLM association analysis for bridge items and policies
 │   └── policies_all.json					# regulations data
 ├── BridgeMatching/                         # BridgeMatching
 │   ├── __init__.py
-│   ├── BridgeMatch_predict.py              # bridge items match prediction
+│   ├── BridgeMatch_predict.py              # bridge item match prediction
 │   ├── BridgeMatch_trainLLM.py             # training LLM for bridge matching
 │   ├── config.json                         # Configuration file
 │   └── train_bridge_data.json              # Training data
