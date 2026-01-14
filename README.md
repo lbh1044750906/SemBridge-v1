@@ -117,7 +117,7 @@ The project contains the following data files:
 
 
 ## 🚀 Quick Start
-This project relies on `Python 3.12` and `CUDA 12.1` and is only supported on **Linux GPU servers**. If using other versions of Python, you will need to adjust the corresponding packages and CUDA versions.
+This project relies on `Python 3.12` and `CUDA 12.1` and is supported on Linux GPU servers. If using other versions of Python, you will need to adjust the corresponding packages and CUDA versions.
 ### Install
 
 ```bash
