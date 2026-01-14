@@ -72,7 +72,7 @@ if __name__ == "__main__":
         print(f"Execution error: {str(e)}")
     
     
-    # BridgeMapping ---> Establishing the mapping between bridging items and policy set
+    # BridgeMapping ---> Establishing the mapping between bridging items and policy set (Here, we read the pre-built compliance_RKG_CoT.json file.)
     try:
         RELATION_DATA_PATH = "./BridgeMapping/compliance_RKG_CoT.json"  # The knowledge graph result file output by construction_RKG.py
         INPUT_JSONL_PATH = Matching_result_file       # Predicted bridging item results file
@@ -81,7 +81,8 @@ if __name__ == "__main__":
 
         print("====== Loading the mapping between bridging items and policy clauses ======")
         bridge_to_clauses = build_bridge_to_law_ids(RELATION_DATA_PATH)
-
+        
+    # Link inference ---> Inferring the final link path
         print("\n====== Establishing the link between security event analysis and policy implementation ======")
         process_behavior_jsonl(INPUT_JSONL_PATH, OUTPUT_JSONL_PATH, bridge_to_clauses)
 
