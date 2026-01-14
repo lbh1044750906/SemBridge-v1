@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "description": "Compliance Relationship Knowledge Graph",
+    "filter": "Retain only direct alignment, partial alignment, and implicit association.",
+    "sort_rule": "Sorted in descending order by LKI"
+  },
+  "compliance_graph": [
+    {
+      "bridge_id": "B-01",
+      "bridge_sd": "Consent must be voluntary, informed, and explicitly given for personal information (PI) processing.",
+      "related_laws": [
+        {
+          "law": "《Personal Information Protection Law of the People's Republic of China》",
+          "article": "14",
+          "level": "Law",
+          "effective_date": "2021-11",
+          "relation": "Direct alignment",
+          "compliance_degree": 4.0
+        },
+        ...
+      ]
+    },
+    ...
+  ]
+
+}
