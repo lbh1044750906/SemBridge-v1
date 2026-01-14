@@ -23,9 +23,9 @@ The workflow transforms security event data into auditable compliance decisions 
 
 - **Event Semantic Enhancement:** We use engineered prompts, iteratively refined based on key insights, to leverage an LLM to perform contextual expansion, generating comprehensive textual representation $T$ that preserve original event semantics while enhancing interpretability.
 
-- **Bridge Foundation Construction:** This module establishes intermediate semantic constructs called *bridge items*. These items serve as pivots between event descriptions and policy clauses. Through an expert-guided process, we curate a set of bridge items $\mathcal{B}$ that capture compliance-relevant concepts at a suitable abstraction level for bidirectional mapping.
+- **Bridge Foundation Construction:** This module establishes intermediate semantic constructs called *bridge items*. These items serve as pivots between event descriptions and policy clauses. Through an expert-guided process, we curate a set of bridge items $B$ that capture compliance-relevant concepts at a suitable abstraction level for bidirectional mapping.
 
-- **Semantic Bridge Linking:** As the core analytical component, this module performs multi-stage semantic alignment via three operations: 1) *BridgeMatching* identifies relevant bridge items $\mathcal{B}_{\text{match}} \subseteq \mathcal{B}$ aligned with description $T$. 2) *BridgeMapping* constructs a Relationship Knowledge Graph ($\mathcal{RKG}$) encoding semantic associations between bridge items and policy clauses. 3) *Link Inference* synthesizes these results to generate structured compliance reports linking events to specific policy provisions.
+- **Semantic Bridge Linking:** As the core analytical component, this module performs multi-stage semantic alignment via three operations: 1) *BridgeMatching* identifies relevant bridge items $B_{\text{match}} \subseteq B$ aligned with description $T$. 2) *BridgeMapping* constructs a Relationship Knowledge Graph ($G_{RKG}$) encoding semantic associations between bridge items and policy clauses. 3) *Link Inference* synthesizes these results to generate structured compliance reports linking events to specific policy provisions.
 
 - **Explainable Decision-Making:** This final module ensures transparency through Chain-of-Thought (CoT) reasoning. It generates interpretable justifications for each inference step and extracts complete decision paths, allowing auditors to trace the logical progression from security events to compliance determinations.
 
@@ -72,7 +72,7 @@ The project contains the following data files:
     }
 ```
 
-- `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $\mathcal{B}$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
+- `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $B$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
 
 ```json
 {"behavior": "Before collecting users' location information, a modal window is displayed showing detailed processing rules and obtaining the user's consent via click.", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
