@@ -57,6 +57,7 @@ SemBridge-v1/
 │   ├── __init__.py
 │   └── link_inference.py                   # Implements the link inference algorithm
 ├── bridge_items.json                       # Predefined Bridge items
+├── config.json                             # Configuration file
 ├── end_to_end_sembridge.py                 # main .py for the SemBridge process
 ├── requirements.txt                 		
 └── README.md       
