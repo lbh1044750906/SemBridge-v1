@@ -3,7 +3,7 @@ import os
 import json
 from ESE_module.event_enhance import init_enhancer, enhance_event
 from BridgeMatching.BridgeMatch_predict import BehaviorPredictor
-from BridgeMapping.link_inference import build_bridge_to_law_ids, process_behavior_jsonl
+from Link_inference.link_inference import build_bridge_to_law_ids, process_behavior_jsonl
 
 def count_behavior_records(file_path):
     """
