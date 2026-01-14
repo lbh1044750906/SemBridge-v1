@@ -23,7 +23,7 @@ We have implemented **_SemBridge_**, an automated and fully auditable method for
 ## ⚙️ Method Workflow
 The workflow transforms security event data into auditable compliance decisions through four stages:
 
-- **Event Semantic Enhancement:** We use engineered prompts, iteratively refined based on key insights, to leverage an LLM to perform contextual expansion, generating comprehensive textual representation $T$ that preserve original event semantics while enhancing interpretability.
+- **Event Semantic Enhancement:** We use engineered prompts to leverage an LLM to perform contextual expansion, generating comprehensive textual representation $T$ that preserve original event semantics while enhancing interpretability.
 
 - **Bridge Foundation Construction:** This module establishes intermediate semantic constructs called *bridge items*. These items serve as pivots between event descriptions and policy clauses. Through an expert-guided process, we curate a set of bridge items $B$ that capture compliance-relevant concepts at a suitable abstraction level for bidirectional mapping.
 
