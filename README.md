@@ -47,11 +47,9 @@ SemBridge-v1/
 │   ├── __init__.py
 │   ├── BridgeMatch_predict.py              # Bridge item matching for prediction
 │   ├── BridgeMatch_trainLLM.py             # Training LLM for BridgeMatching
-│   ├── config.json                         # Configuration file
 │   └── train_bridge_data.json              # Training data
 ├── ESE_module/                             # ESE module
 │   ├── __init__.py
-│   ├── config.json                         # Configuration file
 │   └── event_enhance.py                    # Event semantic enhancement
 ├── Link_inference/                         # Link inference 
 │   ├── __init__.py
