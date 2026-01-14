@@ -56,7 +56,7 @@ SemBridge-v1/
 │   └── link_inference.py                   # Implements the link inference algorithm
 ├── bridge_items.json                       # Predefined Bridge items
 ├── config.json                             # Configuration file
-├── end_to_end_sembridge.py                 # main .py for the SemBridge process
+├── end_to_end_SemBridge.py                 # main .py for the SemBridge process
 ├── requirements.txt                 		
 └── README.md       
 ```
@@ -144,9 +144,9 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ### Running
 **1. End-to-End SemBridge**
 
-​Under the `SemBridge-v1/` directory, run `end_to_end_sembridge.py` using the following command.
+​Under the `SemBridge-v1/` directory, run `end_to_end_SemBridge.py` using the following command.
 ```bash
-python end_to_end_sembridge.py
+python end_to_end_SemBridge.py
 ```
 
 The configuration information is located in the `config.json` files within the `SemBridge-v1/` directory, allowing for flexible configuration and modification. **Note:** We do not provide model files here and LLMs need to be downloaded and configured independently from open-source communities.
