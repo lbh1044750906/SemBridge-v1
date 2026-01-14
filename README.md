@@ -8,7 +8,7 @@ We have implemented **_SemBridge_**, an automated and fully auditable method for
 
 **Application Scenarios:** App Log Behaviour Compliance Auditing, Professional Audit Records Compliance Checking, Cybersecurity Events Compliance Analysis, Documentation Materials Compliance Analysis 
 
-**Supported data types:** Structured, semi-structured, and unstructured data (e.g., logs, alerts, or audit records) within the security and privacy domains.
+**Supported data types:** Structured and semi-structured data (e.g., logs, alerts, or audit records) within the security and privacy domains.
 <!-- 可选：截图、动图、Logo -->
 
 ## 🌟 Core Features 
