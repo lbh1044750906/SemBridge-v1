@@ -101,7 +101,7 @@ The project contains the following data files:
           "article": "14",
           "level": "Law",
           "effective_date": "2021-11",
-          "relation": "Direct correspondence",
+          "relation": "Direct alignment",
           "compliance_degree": 4.0
         },
         ...
