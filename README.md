@@ -44,7 +44,7 @@ SemBridge-v1/
 │   └── policies_all.json					# regulations data
 ├── BridgeMatching/                         # BridgeMatching
 │   ├── __init__.py
-│   ├── BridgeMatch_predict.py              # bridge item match prediction
+│   ├── BridgeMatch_predict.py              # bridge item matching for prediction
 │   ├── BridgeMatch_trainLLM.py             # training LLM for bridge matching
 │   ├── config.json                         # Configuration file
 │   └── train_bridge_data.json              # Training data
