@@ -37,23 +37,25 @@ The workflow transforms security event data into auditable compliance decisions 
 
 ```bash
 SemBridge-v1/
-├── BridgeMapping/                          # BridgeMapping and link inference
+├── BridgeMapping/                          # BridgeMapping
 │   ├── __init__.py
-│   ├── compliance_RKG_CoT.json
-│   ├── construction_RKG.py                 # constructing Relationship Knowledge Graph
-│   ├── link_inference.py                   # link inference
+│   ├── compliance_RKG_CoT.json             # Output Relationship Knowledge Graph
+│   ├── construction_RKG.py                 # Constructing Relationship Knowledge Graph
 │   ├── LLM_MapBridgeToRule.py              # LLM association analysis for bridge items and policies
-│   └── policies_all.json					# regulations data
+│   └── policies_all.json					# Regulations data
 ├── BridgeMatching/                         # BridgeMatching
 │   ├── __init__.py
-│   ├── BridgeMatch_predict.py              # bridge item matching for prediction
-│   ├── BridgeMatch_trainLLM.py             # training LLM for BridgeMatching
+│   ├── BridgeMatch_predict.py              # Bridge item matching for prediction
+│   ├── BridgeMatch_trainLLM.py             # Training LLM for BridgeMatching
 │   ├── config.json                         # Configuration file
 │   └── train_bridge_data.json              # Training data
 ├── ESE_module/                             # ESE module
 │   ├── __init__.py
 │   ├── config.json                         # Configuration file
-│   └── event_enhance.py                    # event semantic enhancement
+│   └── event_enhance.py                    # Event semantic enhancement
+├── Link_inference/                         # Link inference 
+│   ├── __init__.py
+│   └── link_inference.py                   # Implements the link inference algorithm
 ├── bridge_items.json                       # Predefined Bridge items
 ├── end_to_end_sembridge.py                 # main .py for the SemBridge process
 ├── requirements.txt                 		
