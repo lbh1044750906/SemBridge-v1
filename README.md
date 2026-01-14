@@ -14,8 +14,8 @@ We have implemented **_SemBridge_**, an automated and fully auditable method for
 ## 🌟 Core Features 
 
 - 🔗 **Auto-link events to regulations**: Link security events (e.g., app logs or audit records) to relevant privacy regulation clauses (e.g., PIPL article 14).
-- 🔍 **Automated compliance checking:** Checking whether security events meet regulatory requirements, such as compliance or violation.
-- 📚 **Multi-source regulatory analysis**: Supports joint analysis of regulations across different levels, dimensions, and hierarchies (e.g., PIPL, CSL, DSL, etc.).
+- 🔍 **Automated compliance checking:** Automatically evaluates whether security events align with regulatory requirements, identifying both compliance and potential violations.
+- 📚 **Multi-source regulatory analysis**: Enables cross-reference analysis of regulations across multiple levels, dimensions, and hierarchies (e.g., PIPL, CSL, and DSL).
 - 📑 **Generate link reports**: Export results in JSON format for link inference paths between events and legal clauses.
 - ⚡ **Higher efficiency**: Minimizes manual auditing costs, enables rapid output of compliance insights, and supports human-in-the-loop review.
 - 🧩 **Operational expandability**: Predefined bridge items and regulatory documents are modular, flexible, and easily updatable to adapt to domain-specific needs and evolving legal requirements.
