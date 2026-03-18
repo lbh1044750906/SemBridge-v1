@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # Initialise the semantic enhancer
     init_enhancer()
     
-    # Security event input
+    # Security event input  Example: Application logs from the LogHub
     event = {
         "behavior": "location_access",
         "log_lines": [
