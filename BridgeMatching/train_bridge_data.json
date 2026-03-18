@@ -1,2 +1,3 @@
-{"behavior": "Before collecting users' location information, a modal window is displayed showing detailed processing rules and obtaining the user's consent via click.", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
-{"behavior": "When accessing irs01.com, the user's device initiates encrypted data transmission. The HTTP request parameter includes the encryption identifier `encrypt=1`, utilising the HTTP protocol. Data is transmitted in plaintext format but includes the encryption identifier, involving device information such as IMEI, MAC address, Android ID, and other data.", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
+{"behavior": "在收集用户位置信息之前，系统会弹出一个模态窗口，显示详细的处理规则，并通过点击获取用户的同意。", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
+{"behavior": "访问 XXX.com 时，用户的设备会启动加密数据传输。HTTP 请求参数中包含加密标识符 `encrypt=1`，并采用 HTTP 协议。数据以明文格式传输，但包含加密标识符，其中涉及设备信息（如 IMEI、MAC 地址、Android ID）及其他数据。", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
+// Tips: Due to our annotated data potentially containing confidential company information, we have provided only a few test data examples.
