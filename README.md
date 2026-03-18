@@ -67,58 +67,13 @@ We used the CPED dataset (Appendix C in paper) includes two parts:
 - **Application Logs:** The structured system logs are publicly obtained in the LogHub (https://github.com/logpai/loghub/tree/master). 
 - **Audit Records:** The ground-truth misconduct behaviors were derived from real-world professional audit reports. Due to strict non-disclosure agreements, these specific records cannot be publicly released. Even with our anonymization measures, raw audit text often contains proprietary business logic that poses a high risk of re-identification or intellectual property leakage. For this reason, we provide some synthetic audit samples in this study and our anonymous repository that maintain the same semantic structure and complexity as the original data, allowing readers to understand our work. 
 
-
 The project contains the following available data files:
 
-- `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input event description $T$ and the bridge item, such as “compliant” or “violating”). For example, the bridging item `B-01` is: 
-```json
-    {
-      "ID": "B-01",
-      "L1": "Lawful Basis for Personal Information",
-      "L2": "Individual Consent",
-      "SD": "Consent must be voluntary, informed, and explicitly given for personal information (PI) processing.",
-      "SJ": ""    
-    }
-```
+- `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input event description $T$ and the bridge item, such as “compliant” or “violating”). 
 
-- `/BridgeMatching/train_bridge_data.json`: This file contains training data for matching text $T$ with bridge item sets $B$, used in fine-tuning LLM models to perform _BridgeMatching_ tasks. Due to our annotated data potentially containing confidential company information, we have provided only a few anonymised data examples, detailed as follows:
+- `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T 35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). 
 
-```json
-{"behavior": "Before collecting users' location information, a modal window is displayed showing detailed processing rules and obtaining the user's consent via click.", "compliance_labels": [{"bridge_id": "B-01", "SJ": 1}, {"bridge_id": "B-06", "SJ": 1}]}
-{"behavior": "When accessing irs01.com, the user's device initiates encrypted data transmission. The HTTP request parameter includes the encryption identifier `encrypt=1`, utilising the HTTP protocol. Data is transmitted in plaintext format but includes the encryption identifier, involving device information such as IMEI, MAC address, Android ID, and other data.", "compliance_labels": [{"bridge_id": "B-13", "SJ": 0}]}
-```
-
-- `/BridgeMapping/policies_all.json`:  This is the data for all regulatory provisions. We have collected regulations at nine different levels and granularities: the Cybersecurity Law (CSL), the Constitution of the People's Republic of China (Constitution), Measures for Determining the Illegal Collection and Use of Personal Information by Apps (MICUPIA), Personal Information Security Specification (GB/T 35273-2020), the Civil Code of the People's Republic of China (Civil Code), Personal Information Protection Law (PIPL), Data Security Law (DSL), Network Data Security Management Regulations (NDSMR), and Measures for the Administration of Personal Information Protection Compliance Audits (PIPCA). For example, a data structure for a clause is as follows:
-
-```json
-  {
-    "CID": "PIPL-16",
-    "PName": "《Personal Information Protection Law of the People's Republic of China》",
-    "Cont": "A personal information processor shall not refuse to provide products or services for an individual on the grounds that the individual withholds his consent for the processing of his personal information or has withdrawn his consent for the processing of personal information, except where the processing of personal information is necessary for the provision of products or services."
-  }
-```
-
-- `/BridgeMapping/compliance_RKG_CoT.json`:  We constructed a relationship knowledge graph mapping bridge items to regulatory clauses using `LLM_MapBridgeToRule.py` and `construction_RKG.py`. The data is stored in `compliance_RKG_CoT.json`. This is a completed relational data set with the following structure:
-```json
-"compliance_graph": [
-    {
-      "bridge_id": "B-01",
-      "bridge_sd": "Consent must be voluntary, informed, and explicitly given for personal information (PI) processing.",
-      "related_laws": [
-        {
-          "law": "《Personal Information Protection Law of the People's Republic of China》",
-          "article": "14",
-          "level": "Law",
-          "effective_date": "2021-11",
-          "relation": "Direct alignment",
-          "compliance_degree": 4.0
-        },
-        ...
-      ]
-    },
-    ...
-]
-```
+- `/BridgeMapping/compliance_RKG_CoT.json`:  We constructed a relationship knowledge graph mapping bridge items to regulatory clauses using `LLM_MapBridgeToRule.py` and `construction_RKG.py`. The data is stored in `compliance_RKG_CoT.json`. 
 
 
 ## 🧑‍💻 Demo
