@@ -65,8 +65,8 @@ SemBridge-v1/
 
 The CPED dataset (detailed in Appendix C of the associated paper) consists of two main parts:
 
-- **Application Logs:** The structured event logs are sourced from the LogHub repository (https://github.com/logpai/loghub/tree/master). 
-- **Audit Records:** Due to strict non-disclosure agreements, these specific records (including security event data and event description text) cannot be publicly released. Even with our anonymization measures, raw audit data often contains proprietary business logic that poses a high risk of re-identification or intellectual property leakage. For this reason, we provide some synthetic audit samples in this study and our anonymous repository that maintain the same semantic structure and complexity as the original data, allowing readers to understand our work. 
+- **Application Logs:** These structured event logs are publicly accessible via the LogHub repository (https://github.com/logpai/loghub/tree/master). 
+- **Audit Records:** These ground-truth records are derived from proprietary professional reports. Due to strict non-disclosure agreements, these specific records (including security event data and event description text) cannot be publicly released. Even with our anonymization measures, raw audit data often contains proprietary business logic that poses a high risk of re-identification or intellectual property leakage. For this reason, we provide some synthetic audit samples in this study and our anonymous repository that maintain the same semantic structure and complexity as the original data, allowing readers to understand our work. 
 
 The project contains the following available data files:
 
