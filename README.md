@@ -62,6 +62,13 @@ SemBridge-v1/
 ```
 
 ## 📊 Dataset Description
+We used the CPED dataset (Appendix C in paper) includes two parts:
+
+\begin{itemize} 
+\item \textbf{Log Datasets (LogHub):} The structured system logs are publicly obtained in the work \cite{zhu2023loghub}. 
+\item \textbf{Audit Records:} The ground-truth misconduct behaviors were derived from real-world professional audit reports. Due to strict non-disclosure agreements, these specific records cannot be publicly released. Even with our anonymization measures, raw audit text often contains proprietary business logic that poses a high risk of re-identification or intellectual property leakage. For this reason, we provide some synthetic audit samples in this study and our anonymous repository that maintain the same semantic structure and complexity as the original data, allowing readers to understand our work. 
+\end{itemize}
+
 The project contains the following data files:
 
 - `bridge_items.json`: This includes the 17 bridge items we designed for personal information protection, consisting of first-level labels `L1`, second-level labels `L2`, natural language descriptions `SD` for the bridge item, and predefined semantic labels `SJ` (denoting the semantic relationship between the input event description $T$ and the bridge item, such as “compliant” or “violating”). For example, the bridging item `B-01` is: 
